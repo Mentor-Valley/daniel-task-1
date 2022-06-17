@@ -5,8 +5,8 @@ import yargs from "yargs"
 
 const { argv } = yargs(process.argv)
 
-const res = await fetch("https://www.reddit.com/.json")
-const data = await res.json()
+const response = await fetch("https://www.reddit.com/.json")
+const data = await response.json()
 const randomIndex = Math.floor(
   Math.random() * data.data.children.length
 )
@@ -21,3 +21,5 @@ if (argv.print) {
 } else {
   open(`https://reddit.com${post.data.permalink}`)
 }
+
+// reddit cli package
